@@ -6,26 +6,16 @@
     <title>IT Launch • Paweł Grabowski</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
-
+        /* Wymuszamy nowy wygląd, żeby przeglądarka nie pokazała staroci */
         body { 
-            background-color: #0f172a; 
-            color: #ffffff; 
-            font-family: 'Inter', sans-serif;
-            overflow-x: hidden;
+            background-color: #0f172a !important; 
+            color: #ffffff !important; 
+            font-family: sans-serif;
         }
 
-        .neo-shadow { box-shadow: 12px 12px 0 #000000; }
-        .neo-shadow-sm { box-shadow: 6px 6px 0 #000000; }
-
-        .accent-text {
-            color: #ccff00;
-        }
-
-        .highlight-box {
-            border-bottom: 6px solid #ccff00;
-        }
-
+        .neo-shadow { box-shadow: 10px 10px 0 #000000 !important; }
+        
+        /* Poprawka zdjęcia - zachowujemy Twoje ustawienia */
         .photo-wrapper {
             position: relative;
             height: 280px;
@@ -41,91 +31,79 @@
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: 50% 18%;
+            object-position: 50% 18%; /* Twoje idealne kadrowanie */
             transform: scale(1.1);
         }
 
-        .gradient-bg {
-            background: radial-gradient(circle at top right, #1e293b, #0f172a);
+        /* Nowy styl napisów - bez wielkich czarnych bloków */
+        .main-title {
+            font-size: 4.5rem;
+            line-height: 1.1;
+            font-weight: 900;
+            letter-spacing: -0.02em;
+        }
+
+        .highlight {
+            color: #ccff00; /* Neonowa limonka */
+            text-decoration: underline;
+            text-decoration-thickness: 8px;
+            text-underline-offset: 8px;
         }
     </style>
 </head>
-<body class="gradient-bg min-h-screen">
+<body class="min-h-screen">
 
-    <nav class="mx-auto max-w-7xl px-6 py-8">
-        <div class="inline-block border-2 border-[#ccff00] px-4 py-1 text-xs font-black uppercase tracking-[0.2em] text-[#ccff00]">
-            IT Launch Est. 2026
-        </div>
-    </nav>
-
-    <header class="mx-auto max-w-7xl px-6 py-12 lg:py-20">
+    <header class="mx-auto max-w-7xl px-6 py-16 lg:py-24">
         <div class="grid items-center gap-16 lg:grid-cols-2">
             
             <div>
-                <p class="mb-4 font-bold uppercase tracking-widest text-[#ccff00]">Paweł Grabowski</p>
-                
-                <h1 class="text-5xl font-black leading-tight lg:text-7xl">
+                <div class="mb-6 inline-block bg-[#ccff00] px-4 py-1 text-sm font-black uppercase tracking-widest text-black neo-shadow" style="box-shadow: 4px 4px 0 #000 !important;">
+                    IT Launch • Paweł Grabowski
+                </div>
+
+                <h1 class="main-title">
                     Wdrażam ERP i <br>
-                    <span class="highlight-box">ogarniam projekty</span>,<br>
+                    <span class="highlight">ogarniam projekty</span>,<br>
                     które inni komplikują.
                 </h1>
 
-                <p class="mt-8 max-w-lg text-xl leading-relaxed text-slate-300">
-                    Wchodzę tam, gdzie panuje chaos. <br>
-                    Upraszczam procesy, spinam dostawców i <span class="text-white font-bold underline decoration-[#ccff00]">dowożę efekty</span>, o których inni tylko opowiadają na spotkaniach.
+                <p class="mt-10 text-xl leading-relaxed text-slate-300 max-w-lg">
+                    Wchodzę w chaos, upraszczam procesy i dowożę efekt. <br>
+                    Bez zbędnego lania wody i komplikowania prostych rzeczy.
                 </p>
 
                 <div class="mt-12 flex flex-wrap gap-6">
                     <a href="mailto:pawel@itlaunch.net" 
-                       class="neo-shadow rounded-xl border-4 border-black bg-[#ccff00] px-10 py-5 text-xl font-black text-black transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
+                       class="neo-shadow rounded-2xl border-4 border-black bg-[#ccff00] px-10 py-5 text-xl font-black text-black hover:bg-[#b3ff00] transition-colors">
                         Zacznijmy projekt
                     </a>
                     <a href="https://www.linkedin.com" 
-                       class="neo-shadow rounded-xl border-4 border-black bg-white px-10 py-5 text-xl font-black text-black transition-all hover:translate-x-1 hover:translate-y-1 hover:shadow-none">
+                       class="neo-shadow rounded-2xl border-4 border-black bg-white px-10 py-5 text-xl font-black text-black hover:bg-gray-100 transition-colors">
                         LinkedIn
                     </a>
                 </div>
             </div>
 
-            <div class="flex justify-center lg:justify-end">
-                <div class="neo-shadow w-full max-w-[420px] rounded-[40px] border-4 border-black bg-white p-10 text-black">
+            <div class="flex justify-center">
+                <div class="neo-shadow w-full max-w-[420px] rounded-[40px] border-4 border-black bg-white p-10 text-black text-center">
                     
-                    <div class="photo-wrapper neo-shadow-sm mb-10">
+                    <div class="photo-wrapper mb-8" style="box-shadow: 6px 6px 0 #000;">
                         <img src="profilowe.png" alt="Paweł Grabowski">
                     </div>
                     
-                    <div class="text-center">
-                        <h2 class="text-3xl font-black uppercase tracking-tighter">Paweł Grabowski</h2>
-                        <p class="text-lg font-bold text-blue-600">PM & ERP Specialist</p>
-                        
-                        <div class="my-8 h-1 w-full bg-slate-100"></div>
-                        
-                        <p class="text-lg font-medium italic leading-relaxed text-slate-600">
-                            "Łączę analizę z dowożeniem. <br> Bez zbędnej ściemy."
-                        </p>
-                    </div>
+                    <h2 class="text-3xl font-black uppercase tracking-tight">Paweł Grabowski</h2>
+                    <p class="text-lg font-bold text-blue-600">Ekspert wdrożeń ERP</p>
+                    
+                    <div class="my-6 h-0.5 w-full bg-gray-200"></div>
+                    
+                    <p class="text-lg font-medium italic text-gray-700">
+                        "Łączę analizę z dowożeniem. <br> Bez ściemy."
+                    </p>
                 </div>
             </div>
 
         </div>
     </header>
-
-    <section class="mx-auto max-w-7xl px-6 py-20">
-        <div class="grid gap-8 md:grid-cols-3">
-            <div class="border-t-4 border-[#ccff00] pt-6">
-                <h3 class="text-xl font-black uppercase tracking-tighter accent-text">01. ERP</h3>
-                <p class="mt-4 text-slate-400 font-medium">Pełne wsparcie od wyboru systemu, przez warsztaty, aż po stabilizację po starcie.</p>
-            </div>
-            <div class="border-t-4 border-[#ccff00] pt-6">
-                <h3 class="text-xl font-black uppercase tracking-tighter accent-text">02. Analiza</h3>
-                <p class="mt-4 text-slate-400 font-medium">Audyt procesów biznesowych i przekładanie ich na język zrozumiały dla IT.</p>
-            </div>
-            <div class="border-t-4 border-[#ccff00] pt-6">
-                <h3 class="text-xl font-black uppercase tracking-tighter accent-text">03. Ratunek</h3>
-                <p class="mt-4 text-slate-400 font-medium">Przejmowanie projektów "trudnych" i doprowadzanie ich do sukcesu.</p>
-            </div>
-        </div>
-    </section>
 
 </body>
 </html>
