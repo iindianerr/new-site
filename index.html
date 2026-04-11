@@ -6,142 +6,125 @@
     <title>IT Launch • Paweł Grabowski</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;700;800&display=swap');
-
+        /* PALETA WYCIĄGNIĘTA ZE ZDJĘCIA PROFILEWEGO */
         :root {
-            --gold-accent: #d4a373; /* Miodowe złoto z tła zdjęcia */
-            --navy-deep: #1e293b;   /* Granat z Twojej koszuli */
-            --sand-bg: #faf7f2;    /* Ciepły, papierowy odcień tła */
-            --text-dark: #2c241e;  /* Brązowa czerń z detali zdjęcia */
+            --accent-main: #c6a683;   /* Ciepły kamel/brąz z tła i detali zdjęcia */
+            --accent-light: #fde68a;  /* Klasyczny żółty do podkreśleń */
+            --bg-light: #f9fafb;     /* Jasne tło strony */
+            --text-dark: #111827;    /* Ciemny tekst */
         }
 
-        body { 
-            background-color: var(--sand-bg) !important; 
-            color: var(--text-dark) !important; 
-            font-family: 'Plus Jakarta Sans', sans-serif !important;
-            margin: 0;
-        }
-
+        body { background-color: var(--bg-light); color: var(--text-dark); font-family: sans-serif; }
         .neo-shadow { box-shadow: 4px 4px 0 #000; }
-        .neo-shadow-lg { box-shadow: 8px 8px 0 #000; }
-
-        /* Poprawka zdjęcia - idealne wkomponowanie w złotą ramę */
-        .photo-frame {
-            height: 260px;
-            width: 260px;
+        .neo-shadow-lg { box-shadow: 6px 6px 0 #000; }
+        
+        /* TWOJA RAMKA ZDJĘCIA Z POPRAWIONYM KADROWANIEM */
+        .photo-container {
+            height: 220px;
+            width: 220px;
             overflow: hidden;
-            border-radius: 50%;
-            border: 8px solid var(--gold-accent);
+            border-radius: 9999px;
+            border: 5px solid var(--accent-main); /* Kolor kamelowy ze zdjęcia */
             margin: 0 auto 1.5rem auto;
-            background-color: white;
-            box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.1);
+            background-color: #ffffff;
         }
 
-        .photo-frame img {
+        .photo-container img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: center 18% !important; 
+            object-position: center 18%; /* Obniża Twoją głowę w okręgu */
             transform: scale(1.1);
         }
 
-        .hero-gradient {
-            background: linear-gradient(135deg, #ffffff 0%, #faf7f2 100%);
-        }
-
-        .highlight {
-            background: linear-gradient(120deg, rgba(212, 163, 115, 0.3) 0%, rgba(212, 163, 115, 0.3) 100%);
-            padding: 0 4px;
-        }
+        .highlight { background: var(--accent-light); padding: 0 6px; }
     </style>
 </head>
 <body>
 
-    <header class="hero-gradient border-b-2 border-black">
-        <div class="mx-auto max-w-7xl px-6 py-20 lg:py-32">
-            <div class="grid items-center gap-16 lg:grid-cols-2">
-                
+    <section class="relative border-b-4 border-[#111827] bg-white">
+        <div class="mx-auto max-w-7xl px-6 py-20">
+            <div class="grid items-center gap-12 lg:grid-cols-2">
+
                 <div>
-                    <div class="mb-6 inline-flex rounded-md border-2 border-black bg-white px-4 py-1.5 text-xs font-bold uppercase tracking-widest neo-shadow">
+                    <div class="mb-4 inline-flex rounded-full border-2 border-[#111827] bg-[#fde68a] px-4 py-2 text-sm font-semibold">
                         IT Launch • Paweł Grabowski
                     </div>
-                    <h1 class="text-6xl font-extrabold leading-[1.1] tracking-tight text-[var(--text-dark)] lg:text-7xl">
-                        Wdrażam ERP i <br> 
-                        <span class="highlight text-[var(--navy-deep)]">ogarniam projekty</span>,<br>
-                        które inni komplikują.
+
+                    <h1 class="text-5xl font-extrabold leading-tight">
+                        Wdrażam ERP i ogarniam projekty,
+                        <span class="highlight">które inni komplikują</span>
                     </h1>
-                    <p class="mt-8 text-xl leading-relaxed text-slate-600 max-w-xl font-medium">
-                        Upraszczam procesy, spinam zespoły i dowożę efekt końcowy tam, gdzie inni widzą tylko chaos.
+
+                    <p class="mt-6 text-lg text-[#374151]">
+                        Wchodzę w chaos, upraszczam i dowożę efekt.
                     </p>
-                    <div class="mt-12 flex flex-wrap gap-6">
+
+                    <div class="mt-8 flex gap-4">
                         <a href="mailto:pawel@itlaunch.net" 
-                           class="neo-shadow rounded-xl border-2 border-black px-10 py-5 text-xl font-bold text-white transition-all hover:-translate-y-1"
-                           style="background-color: var(--navy-deep);">
-                            Zacznijmy projekt
+                           class="px-6 py-3 font-semibold rounded-xl border-2 neo-shadow text-white"
+                           style="background: var(--accent-main);">
+                            Napisz do mnie
                         </a>
                         <a href="https://www.linkedin.com" 
-                           class="neo-shadow rounded-xl border-2 border-black bg-white px-10 py-5 text-xl font-bold text-black transition-all hover:-translate-y-1">
+                           class="px-6 py-3 font-semibold rounded-xl border-2 neo-shadow bg-white text-black">
                             LinkedIn
                         </a>
                     </div>
                 </div>
 
-                <div class="flex justify-center">
-                    <div class="neo-shadow-lg rounded-[2rem] border-4 border-black bg-white p-12 text-center w-full max-w-md">
-                        <div class="photo-frame">
+                <div class="text-center">
+                    <div class="p-10 rounded-2xl border-4 border-[#111827] bg-white neo-shadow-lg">
+                        
+                        <div class="photo-container">
                             <img src="profilowe.png" alt="Paweł Grabowski">
                         </div>
-                        <h2 class="text-3xl font-extrabold tracking-tight text-[var(--navy-deep)] uppercase">Paweł Grabowski</h2>
-                        <p class="mt-2 text-lg font-bold uppercase tracking-widest text-[var(--gold-accent)]">Expert ERP & PM</p>
-                        
-                        <div class="my-8 h-px w-full bg-slate-200"></div>
-                        
-                        <p class="text-lg font-medium italic text-slate-500 leading-relaxed">
-                            "Mój cel jest prosty: system ma pracować dla Ciebie, nie odwrotnie."
+
+                        <h2 class="text-2xl font-bold">PM, wdrożeniowiec, gość od trudnych tematów</h2>
+                        <p class="mt-3 text-base text-[#4b5563]">
+                            Łączę analizę z dowożeniem. Bez ściemy.
                         </p>
                     </div>
                 </div>
 
             </div>
         </div>
-    </header>
+    </section>
 
-    <section class="mx-auto max-w-7xl px-6 py-24">
-        <h2 class="text-4xl font-extrabold mb-16 text-center uppercase tracking-tighter">W czym pomagam</h2>
-        <div class="grid gap-8 md:grid-cols-3">
+    <section class="mx-auto max-w-7xl px-6 py-20">
+        <h2 class="text-3xl font-bold mb-12 uppercase tracking-tight text-[#111827]">W czym pomagam</h2>
+
+        <div class="grid md:grid-cols-3 gap-6">
+            <div class="p-6 rounded-xl border-2 border-[#111827] bg-white neo-shadow">
+                <div class="inline-block mb-3 px-2 font-bold bg-[#fde68a] uppercase text-sm">Wdrożenia ERP</div>
+                <p class="text-[#374151]">Prowadzę wdrożenia od analizy i warsztatów, aż po uruchomienie i stabilizację systemu.</p>
+            </div>
             
-            <div class="neo-shadow rounded-2xl border-2 border-black bg-white p-10 hover:border-[var(--gold-accent)] transition-colors group">
-                <div class="mb-6 inline-block bg-[var(--sand-bg)] px-3 py-1 font-bold text-[var(--gold-accent)] border border-black text-xs uppercase tracking-widest">Analiza</div>
-                <h3 class="text-2xl font-bold mb-4 group-hover:text-[var(--gold-accent)]">Wdrożenia ERP</h3>
-                <p class="text-slate-600 font-medium">Od wyboru systemu po stabilizację procesów po starcie produkcyjnym.</p>
+            <div class="p-6 rounded-xl border-2 border-[#111827] bg-white neo-shadow">
+                <div class="inline-block mb-3 px-2 font-bold bg-[#fde68a] uppercase text-sm">Analiza procesów</div>
+                <p class="text-[#374151]">Porządkuję procesy i przekładam potrzeby biznesu na konkretne działania.</p>
             </div>
 
-            <div class="neo-shadow rounded-2xl border-2 border-black bg-white p-10 hover:border-[var(--gold-accent)] transition-colors group">
-                <div class="mb-6 inline-block bg-[var(--sand-bg)] px-3 py-1 font-bold text-[var(--gold-accent)] border border-black text-xs uppercase tracking-widest">Procesy</div>
-                <h3 class="text-2xl font-bold mb-4 group-hover:text-[var(--gold-accent)]">Audyt IT</h3>
-                <p class="text-slate-600 font-medium">Znajduję wąskie gardła i przekładam potrzeby biznesu na język technologii.</p>
+            <div class="p-6 rounded-xl border-2 border-[#111827] bg-white neo-shadow">
+                <div class="inline-block mb-3 px-2 font-bold bg-[#fde68a] uppercase text-sm">Koordynacja IT</div>
+                <p class="text-[#374151]">Spinam biznes, dostawców i zespoły, żeby projekt szedł do przodu.</p>
             </div>
-
-            <div class="neo-shadow rounded-2xl border-2 border-black bg-white p-10 hover:border-[var(--gold-accent)] transition-colors group">
-                <div class="mb-6 inline-block bg-[var(--sand-bg)] px-3 py-1 font-bold text-[var(--gold-accent)] border border-black text-xs uppercase tracking-widest">Kryzys</div>
-                <h3 class="text-2xl font-bold mb-4 group-hover:text-[var(--gold-accent)]">Ratowanie Projektów</h3>
-                <p class="text-slate-600 font-medium">Przejmuję stery w trudnych momentach i dowożę efekt w budżecie.</p>
-            </div>
-
         </div>
     </section>
 
-    <footer class="border-t-4 border-black py-24 text-center bg-white">
-        <div class="mx-auto max-w-7xl px-6">
-            <h2 class="text-5xl font-extrabold mb-8 tracking-tighter">Masz projekt, <br>który się rozjeżdża?</h2>
-            <a href="mailto:pawel@itlaunch.net" 
-               class="neo-shadow inline-block rounded-2xl border-2 border-black px-12 py-6 text-2xl font-bold text-white transition-all hover:scale-105"
-               style="background-color: var(--navy-deep);">
-                Napisz: pawel@itlaunch.net
-            </a>
-            <p class="mt-20 text-xs font-bold uppercase tracking-[0.3em] opacity-40">© 2026 IT Launch • Paweł Grabowski</p>
+    <section class="border-t-4 border-[#111827]" style="background: var(--accent-main);">
+        <div class="mx-auto max-w-7xl px-6 py-20">
+            <h2 class="text-4xl font-bold text-white">Masz projekt, który się rozjeżdża?</h2>
+            <p class="mt-4 text-xl font-medium text-white opacity-90">Napisz. Ogarnę to.</p>
+
+            <div class="mt-8">
+                <a href="mailto:pawel@itlaunch.net" 
+                   class="px-8 py-4 font-bold rounded-xl border-2 border-[#111827] bg-white neo-shadow inline-block text-black hover:bg-gray-50 transition-colors">
+                    pawel@itlaunch.net
+                </a>
+            </div>
         </div>
-    </footer>
+    </section>
 
 </body>
 </html>
