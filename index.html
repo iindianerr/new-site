@@ -6,48 +6,51 @@
     <title>IT Launch • Paweł Grabowski</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <style>
-        /* Wymuszamy nowy wygląd, żeby przeglądarka nie pokazała staroci */
+        /* Agresywne nadpisanie starych stylów */
         body { 
             background-color: #0f172a !important; 
             color: #ffffff !important; 
-            font-family: sans-serif;
+            font-family: 'Inter', sans-serif, system-ui !important;
+            margin: 0;
+            padding: 0;
         }
 
         .neo-shadow { box-shadow: 10px 10px 0 #000000 !important; }
-        
-        /* Poprawka zdjęcia - zachowujemy Twoje ustawienia */
-        .photo-wrapper {
+        .neo-shadow-sm { box-shadow: 6px 6px 0 #000000 !important; }
+
+        /* Fix dla zdjęcia */
+        .photo-circle {
             position: relative;
             height: 280px;
             width: 280px;
             overflow: hidden;
             border: 6px solid #000000;
-            border-radius: 50%;
+            border-radius: 50% !important;
             background: #cbd5e1;
             margin: 0 auto;
         }
 
-        .photo-wrapper img {
+        .photo-circle img {
             width: 100%;
             height: 100%;
             object-fit: cover;
-            object-position: 50% 18%; /* Twoje idealne kadrowanie */
+            object-position: 50% 18% !important;
             transform: scale(1.1);
         }
 
-        /* Nowy styl napisów - bez wielkich czarnych bloków */
-        .main-title {
-            font-size: 4.5rem;
+        /* Usunięcie czarnych bloków i dodanie eleganckiego podkreślenia */
+        .hero-title {
+            font-size: clamp(2.5rem, 5vw, 4.5rem);
             line-height: 1.1;
             font-weight: 900;
-            letter-spacing: -0.02em;
+            color: white !important;
+            background: none !important; /* To usuwa czarne tło */
         }
 
-        .highlight {
-            color: #ccff00; /* Neonowa limonka */
-            text-decoration: underline;
-            text-decoration-thickness: 8px;
-            text-underline-offset: 8px;
+        .highlight-line {
+            display: inline-block;
+            border-bottom: 8px solid #ccff00;
+            line-height: 0.9;
         }
     </style>
 </head>
@@ -57,13 +60,13 @@
         <div class="grid items-center gap-16 lg:grid-cols-2">
             
             <div>
-                <div class="mb-6 inline-block bg-[#ccff00] px-4 py-1 text-sm font-black uppercase tracking-widest text-black neo-shadow" style="box-shadow: 4px 4px 0 #000 !important;">
+                <div class="mb-6 inline-block bg-[#ccff00] px-4 py-1 text-sm font-black uppercase tracking-widest text-black neo-shadow-sm">
                     IT Launch • Paweł Grabowski
                 </div>
 
-                <h1 class="main-title">
+                <h1 class="hero-title">
                     Wdrażam ERP i <br>
-                    <span class="highlight">ogarniam projekty</span>,<br>
+                    <span class="highlight-line">ogarniam projekty</span>,<br>
                     które inni komplikują.
                 </h1>
 
@@ -74,11 +77,11 @@
 
                 <div class="mt-12 flex flex-wrap gap-6">
                     <a href="mailto:pawel@itlaunch.net" 
-                       class="neo-shadow rounded-2xl border-4 border-black bg-[#ccff00] px-10 py-5 text-xl font-black text-black hover:bg-[#b3ff00] transition-colors">
+                       class="neo-shadow rounded-2xl border-4 border-black bg-[#ccff00] px-10 py-5 text-xl font-black text-black hover:bg-[#b3ff00] transition-all">
                         Zacznijmy projekt
                     </a>
                     <a href="https://www.linkedin.com" 
-                       class="neo-shadow rounded-2xl border-4 border-black bg-white px-10 py-5 text-xl font-black text-black hover:bg-gray-100 transition-colors">
+                       class="neo-shadow rounded-2xl border-4 border-black bg-white px-10 py-5 text-xl font-black text-black hover:bg-gray-100 transition-all">
                         LinkedIn
                     </a>
                 </div>
@@ -87,12 +90,12 @@
             <div class="flex justify-center">
                 <div class="neo-shadow w-full max-w-[420px] rounded-[40px] border-4 border-black bg-white p-10 text-black text-center">
                     
-                    <div class="photo-wrapper mb-8" style="box-shadow: 6px 6px 0 #000;">
+                    <div class="photo-circle mb-8">
                         <img src="profilowe.png" alt="Paweł Grabowski">
                     </div>
                     
                     <h2 class="text-3xl font-black uppercase tracking-tight">Paweł Grabowski</h2>
-                    <p class="text-lg font-bold text-blue-600">Ekspert wdrożeń ERP</p>
+                    <p class="text-lg font-bold text-blue-600 italic">PM & ERP Specialist</p>
                     
                     <div class="my-6 h-0.5 w-full bg-gray-200"></div>
                     
@@ -104,6 +107,42 @@
 
         </div>
     </header>
+
+    <section class="bg-white text-black py-20 border-t-8 border-black">
+        <div class="mx-auto max-w-7xl px-6">
+            <h2 class="text-4xl font-black uppercase mb-16 text-center lg:text-left underline decoration-[#ccff00] decoration-8 underline-offset-8">W czym pomagam?</h2>
+            
+            <div class="grid gap-10 md:grid-cols-3">
+                <div class="neo-shadow rounded-3xl border-4 border-black bg-white p-8">
+                    <div class="mb-4 inline-block bg-[#ccff00] px-2 py-1 font-black border-2 border-black uppercase text-xs">Strategia</div>
+                    <h3 class="text-2xl font-black uppercase mb-4">Wdrożenia ERP</h3>
+                    <p class="font-medium text-gray-600 leading-relaxed">Pełne prowadzenie projektu – od wyboru systemu, przez analizę procesów, aż po udany start produkcyjny.</p>
+                </div>
+
+                <div class="neo-shadow rounded-3xl border-4 border-black bg-white p-8">
+                    <div class="mb-4 inline-block bg-[#1e293b] text-white px-2 py-1 font-black border-2 border-black uppercase text-xs">Optymalizacja</div>
+                    <h3 class="text-2xl font-black uppercase mb-4">Analiza Procesów</h3>
+                    <p class="font-medium text-gray-600 leading-relaxed">Porządkuję chaos w Twojej firmie. Przekładam potrzeby biznesu na konkretne rozwiązania technologiczne.</p>
+                </div>
+
+                <div class="neo-shadow rounded-3xl border-4 border-black bg-white p-8">
+                    <div class="mb-4 inline-block bg-[#ccff00] px-2 py-1 font-black border-2 border-black uppercase text-xs">Zarządzanie</div>
+                    <h3 class="text-2xl font-black uppercase mb-4">Ratowanie Projektów</h3>
+                    <p class="font-medium text-gray-600 leading-relaxed">Twój projekt IT utknął? Przejmuję stery, stabilizuję sytuację i dowożę wynik w zaplanowanym budżecie.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-[#1e293b] py-16 text-center border-t-4 border-black">
+        <div class="mx-auto max-w-7xl px-6">
+            <h2 class="text-3xl font-black uppercase text-white mb-8">Masz wyzwanie IT?</h2>
+            <a href="mailto:pawel@itlaunch.net" class="text-2xl font-black text-[#ccff00] hover:underline transition-all">
+                pawel@itlaunch.net
+            </a>
+            <p class="mt-12 text-sm text-slate-500 font-bold uppercase tracking-widest">© 2026 IT Launch • Paweł Grabowski</p>
+        </div>
+    </footer>
 
 </body>
 </html>
